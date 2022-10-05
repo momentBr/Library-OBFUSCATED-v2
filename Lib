@@ -863,8 +863,8 @@ function windows:Create(titile,LOCAL_GAME)
 			ToggleCorner.CornerRadius = UDim.new(0, 4)
 			ToggleCorner.Name = "ToggleCorner"
 			ToggleCorner.Parent = Toggle
-           local toggled = toggled or false
 			Toggle.MouseButton1Click:Connect(function()
+			local toggled = toggled or false
 				toggled = not toggled
 				Callback(toggled)
 
@@ -875,7 +875,7 @@ function windows:Create(titile,LOCAL_GAME)
 					TS:Create(Check, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 						ImageTransparency = 0
 					}):Play()
-				else
+				elseif not toggled then
 					TS:Create(Inner, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 						BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 					}):Play()
