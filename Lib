@@ -778,7 +778,7 @@ function windows:Create(titile,LOCAL_GAME)
 
 		end
 
-		function elements:Toggle(title,state,desc,Callback)
+		function elements:Toggle(title,toggled,desc,Callback)
 			local title = title or "Toggle Info"
 			local desc = desc or "Toggle Description Here."
 
@@ -863,21 +863,12 @@ function windows:Create(titile,LOCAL_GAME)
 			ToggleCorner.CornerRadius = UDim.new(0, 4)
 			ToggleCorner.Name = "ToggleCorner"
 			ToggleCorner.Parent = Toggle
-           local toggled = state or false
-              			if toggled == true then
-					TS:Create(Inner, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(123, 190, 239)
-					}):Play()
-					TS:Create(Check, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						ImageTransparency = 0
-					}):Play()
-			end
+           local toggled = toggled or false
 			Toggle.MouseButton1Click:Connect(function()
 				toggled = not toggled
 				Callback(toggled)
 
 				if toggled then
-				      Title.Text = title.." : true"   
 					TS:Create(Inner, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 						BackgroundColor3 = Color3.fromRGB(123, 190, 239)
 					}):Play()
@@ -885,7 +876,6 @@ function windows:Create(titile,LOCAL_GAME)
 						ImageTransparency = 0
 					}):Play()
 				else
-				Title.Text = title.." : fasle"
 					TS:Create(Inner, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 						BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 					}):Play()
