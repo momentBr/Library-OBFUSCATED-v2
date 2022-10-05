@@ -4,7 +4,7 @@ local Home = Window:NewTab('Huh Tab',537253751)
 Home:DropDown("DropDown",'ez',{'ez'},function(v)
 	print(v)
 end)
---[[ 
+ 
                   Add New Choose |
  Local DropDown -> :Add({'ez','ez 1','ez 2'})     
     Example Add |
@@ -17,7 +17,7 @@ end)
       local EZ = Home:DropDown("DropDown",'ez',{'ez'},function(v)
                  EZ:Clear()  
 
-]]
+
 local Label = Home:Label("Label")
 Label:Set('Label v2',Color3.fromRGB(0, 0, 0))
 Home:Button("Button",function(v)
