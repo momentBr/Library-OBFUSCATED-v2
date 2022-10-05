@@ -1,31 +1,38 @@
---[[local win = windows:Create('ez')
-
-local tab = win:NewTab('Huh Tab')
-local RRRR = tab:Label('Label or EZ')
-RRRR:Set('WHY SO VERY EZ????????',Color3.fromRGB(0, 0, 0))
-tab:Button("Button",function(v)
-
-end)
-local ez = tab:DropDown("Time",'re',{1,2,3,4,5,6,7},function(v)
+--[[local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/momentBr/Library-OBFUSCATED-v2/main/README.md'),true))()
+local Window = Library:Create('Upright Hub','Stand Awakening')
+local Home = Window:NewTab('Huh Tab',537253751)
+Home:DropDown("DropDown",'ez',{'ez'},function(v)
 	print(v)
 end)
-PlayerName = {}
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-    table.insert(PlayerName ,v.Name)
-end
+--[[ 
+                  Add New Choose |
+ Local DropDown -> :Add({'ez','ez 1','ez 2'})     
+    Example Add |
+      local EZ = Home:DropDown("DropDown",'ez',{'ez'},function(v)
+                 EZ:Add({'ez','ez 1','ez 2'})
+       
+                  Clear Dropdown |
+ Local DropDown -> :Clear()     
+    Example Clear Dropdown |
+      local EZ = Home:DropDown("DropDown",'ez',{'ez'},function(v)
+                 EZ:Clear()  
 
-ez:Clear()
-ez:Add(PlayerName)
-tab:KeyBind('Key','A',function()
+]]
+local Label = Home:Label("Label")
+Label:Set('Label v2',Color3.fromRGB(0, 0, 0))
+Home:Button("Button",function(v)
+print(v)
+end)
+Home:Toggle('Toggle',false,'Auto Farm Stand',function(v)
 
 end)
-tab:TextBox('TextBox',1,function()
+Home:TextBox('TextBox','RTZ',function(v)
 
 end)
-tab:Slider('Sil',1,50,100,function()
+Home:Slider('Slider',1,50,100,function(v)
 
 end)
-tab:Toggle('Te',false,'emo',function(v)
+Home:KeyBind('KeyBind','A',function(v)
 
 end)]]
 
